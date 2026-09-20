@@ -1,0 +1,247 @@
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+html {
+    font-size: 16px; /* base para unidades rem */
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f4f4f4;
+    color: #222;
+    min-height: 100vh;
+    overflow-x: hidden; /* evita scroll horizontal en móvil */
+}
+
+/* ===== BARRA SUPERIOR (TÍTULO + MENÚ) ===== */
+.barra-superior {
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+    max-width: 1400px;
+    margin: 40px auto;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* ===== ENCABEZADO ===== */
+header {
+    display: flex;
+    align-items: center;
+    padding: 0 40px;
+    background: #000;
+    flex: 1;
+    min-width: 0; /* permite que el texto se encoja */
+}
+
+.titulo-principal {
+    font-size: clamp(1.5rem, 5vw, 3.5rem); /* tamaño fluido */
+    font-weight: 900;
+    color: #fff;
+    letter-spacing: 2px;
+    text-shadow:
+        3px 3px 0 #000,
+        -1px -1px 0 #000,
+        4px 6px 12px rgba(0, 0, 0, 0.9);
+    line-height: 1.1;
+    word-wrap: break-word;
+}
+
+.titulo-principal strong {
+    font-weight: 900;
+}
+
+/* ===== MENÚ ===== */
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 45px;
+    background: #000;
+    padding: 0 45px;
+    flex-shrink: 0;
+}
+
+.menu a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    transition: color 0.3s;
+    white-space: nowrap;
+}
+
+.menu a:hover {
+    color: #bbb;
+}
+
+/* ===== BOTÓN DE TEMA ===== */
+.btn-tema {
+    position: fixed;
+    top: 25px;
+    right: 25px;
+    width: 55px;
+    height: 55px;
+    background: #000;
+    color: #f5c542;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.4rem;
+    cursor: pointer;
+    z-index: 200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.btn-tema:hover {
+    background: #333;
+    transform: scale(1.08);
+}
+
+/* ===== SECCIONES (para cuando agregues contenido) ===== */
+.seccion {
+    width: 90%;
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+/* ===== IMÁGENES RESPONSIVE ===== */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ===== VIDEOS RESPONSIVE (16:9) ===== */
+.video {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* ===== GALERÍA RESPONSIVE ===== */
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+/* ===================================================== */
+/* ==================== RESPONSIVE ===================== */
+/* ===================================================== */
+
+/* 📺 TABLET (hasta 1024px) */
+@media (max-width: 1024px) {
+    header {
+        padding: 0 25px;
+    }
+
+    .menu {
+        gap: 30px;
+        padding: 0 30px;
+    }
+
+    .titulo-principal {
+        font-size: clamp(1.3rem, 4.5vw, 2.5rem);
+    }
+}
+
+/* 📱 TABLET PEQUEÑA / MÓVIL GRANDE (hasta 768px) */
+@media (max-width: 768px) {
+    .barra-superior {
+        flex-direction: column;
+        margin: 20px auto;
+        border-radius: 0;
+        width: 100%;
+    }
+
+    header {
+        justify-content: center;
+        padding: 25px 20px;
+        text-align: center;
+    }
+
+    .titulo-principal {
+        font-size: clamp(1.5rem, 7vw, 2.5rem);
+        letter-spacing: 1px;
+        text-align: center;
+    }
+
+    .menu {
+        justify-content: center;
+        gap: 20px;
+        padding: 15px 15px;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    .menu a {
+        font-size: 0.95rem;
+    }
+
+    .btn-tema {
+        top: 15px;
+        right: 15px;
+        width: 45px;
+        height: 45px;
+        font-size: 1.1rem;
+    }
+}
+
+/* 📱 MÓVIL PEQUEÑO (hasta 480px) */
+@media (max-width: 480px) {
+    header {
+        padding: 20px 15px;
+    }
+
+    .titulo-principal {
+        font-size: 1.5rem;
+        letter-spacing: 0.5px;
+    }
+
+    .menu {
+        gap: 12px;
+        padding: 12px 10px;
+    }
+
+    .menu a {
+        font-size: 0.85rem;
+        padding: 5px 8px;
+    }
+
+    .btn-tema {
+        top: 10px;
+        right: 10px;
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+
+    .seccion {
+        width: 95%;
+        margin: 20px auto;
+        padding: 15px;
+    }
+}
