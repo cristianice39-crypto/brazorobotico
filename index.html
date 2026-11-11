@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proyecto Brazo Robótico - Red de Computadores</title>
     <link rel="stylesheet" href="style.css">
+     <script src="script.js"></script>
 </head>
 <body>
 
@@ -44,16 +45,102 @@
                 <span class="icono-btn">▼</span> INICIAR LECTURA DEL PROYECTO
             </a>
         </div>
-    </section>
 
     <!-- ===== SECCIÓN PASOS ===== -->
     <section id="pasos" class="seccion">
         <h2 class="subtitulo">Pasos del Proyecto</h2>
-        <p style="text-align: center; color: #666; font-family: monospace;">
-            [ ESPACIO RESERVADO PARA LA DOCUMENTACIÓN DE PASOS ]
-        </p>
-    </section>
 
+        <!-- CARRUSEL TECNOLÓGICO -->
+        <div class="tech-carousel-container">
+            <!-- Interfaz superior estilo cámara -->
+            <div class="carousel-ui-top">
+                <div class="ui-status">
+                    <span class="rec-dot"></span> <span class="ui-text">REC // SYS.FEED</span>
+                </div>
+                <span class="ui-text time-code" id="carousel-time">00:00:00</span>
+            </div>
+
+            <!-- Pista del carrusel -->
+            <div class="carousel-track" id="carousel-track">
+                
+                <!-- IMAGEN 1 -->
+                <div class="carousel-slide">
+                    <img src="paso1.jpg" alt="Paso 1">
+                    <div class="slide-overlay">SYS.IMG.01</div>
+                </div>
+                <!-- IMAGEN 2 -->
+                <div class="carousel-slide">
+                    <img src="paso2.jpg" alt="Paso 2">
+                    <div class="slide-overlay">SYS.IMG.02</div>
+                </div>
+                <!-- IMAGEN 3 -->
+                <div class="carousel-slide">
+                    <img src="paso3.jpg" alt="Paso 3">
+                    <div class="slide-overlay">SYS.IMG.03</div>
+                </div>
+                <!-- IMAGEN 4 -->
+                <div class="carousel-slide">
+                    <img src="paso4.jpg" alt="Paso 4">
+                    <div class="slide-overlay">SYS.IMG.04</div>
+                </div>
+                <!-- IMAGEN 5 -->
+                <div class="carousel-slide">
+                    <img src="paso5.jpg" alt="Paso 5">
+                    <div class="slide-overlay">SYS.IMG.05</div>
+                </div>
+                <!-- IMAGEN 6 -->
+                <div class="carousel-slide">
+                    <img src="paso6.jpg" alt="Paso 6">
+                    <div class="slide-overlay">SYS.IMG.06</div>
+                </div>
+                <!-- IMAGEN 7 -->
+                <div class="carousel-slide">
+                    <img src="paso7.jpg" alt="Paso 7">
+                    <div class="slide-overlay">SYS.IMG.07</div>
+                </div>
+                <!-- IMAGEN 8 -->
+                <div class="carousel-slide">
+                    <img src="paso8.jpg" alt="Paso 8">
+                    <div class="slide-overlay">SYS.IMG.08</div>
+                </div>
+                <!-- IMAGEN 9 -->
+                <div class="carousel-slide">
+                    <img src="paso9.jpg" alt="Paso 9">
+                    <div class="slide-overlay">SYS.IMG.09</div>
+                </div>
+                <!-- IMAGEN 10 -->
+                <div class="carousel-slide">
+                    <img src="paso10.jpg" alt="Paso 10">
+                    <div class="slide-overlay">SYS.IMG.10</div>
+                </div>
+                <!-- IMAGEN 11 -->
+                <div class="carousel-slide">
+                    <img src="paso11.jpg" alt="Paso 11">
+                    <div class="slide-overlay">SYS.IMG.11</div>
+                </div>
+
+                <!-- VIDEO 12 -->
+                <div class="carousel-slide">
+                    <video src="video-paso.mp4" controls muted></video>
+                    <div class="slide-overlay">SYS.VID.12</div>
+                </div>
+
+            </div>
+
+            <!-- Controles (Flechas) -->
+            <button class="carousel-btn prev" id="btn-prev">&#10094;</button>
+            <button class="carousel-btn next" id="btn-next">&#10095;</button>
+
+            <!-- Indicadores (Puntitos) -->
+            <div class="carousel-indicators" id="carousel-indicators"></div>
+            
+            <!-- Esquinas decorativas (HUD) -->
+            <div class="hud-corner top-left"></div>
+            <div class="hud-corner top-right"></div>
+            <div class="hud-corner bottom-left"></div>
+            <div class="hud-corner bottom-right"></div>
+        </div>
+    </section>
 
 
 
