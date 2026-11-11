@@ -3,34 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proyecto Brazo Robótico Red De Computadores</title>
+    <title>Proyecto Brazo Robótico - Red de Computadores</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="barra-superior">
 
-    <header>
-        <h1 class="titulo-principal">Proyecto <strong>Brazo Robótico  Red De Computadores</strong></h1>
-    </header>
+    <div class="barra-superior">
+        <header>
+            <h1 class="titulo-principal">Proyecto <strong>Brazo Robótico Red De Computadores</strong></h1>
+        </header>
 
-    <!-- MENÚ DE NAVEGACIÓN -->
-    <nav class="menu">
-        <a href="#pasos">Pasos</a>
-        <a href=" https://cristianice39-crypto.github.io/videos/">Videos</a>
-        <a href="https://cristianice39-crypto.github.io/galeria/">Galería</a>
-        <a href="https://cristianice39-crypto.github.io/materiales/">Materiales</a>
-    </nav>
+        <!-- MENÚ DE NAVEGACIÓN -->
+        <nav class="menu">
+            <a href="#pasos">Pasos</a>
+            <a href="https://cristianice39-crypto.github.io/videos/">Videos</a>
+            <a href="https://cristianice39-crypto.github.io/galeria/">Galería</a>
+            <a href="https://cristianice39-crypto.github.io/materiales/">Materiales</a>
+        </nav>
+    </div>
 
+    <!-- ===== SECCIÓN DE INICIO / PORTADA DE INGENIERÍA ===== -->
+    <section class="hero-ingenieria">
+        
+        <!-- Cuadrícula de fondo estilo plano técnico -->
+        <div class="fondo-cuadricula"></div>
+
+        <div class="contenido-hero">
+            <p class="etiqueta-sistema">SYS.INIT // INGENIERÍA MECATRÓNICA</p>
+            
+            <!-- Título con efecto de máquina de escribir -->
+            <h2 class="titulo-hero">
+                <span id="typewriter"></span><span class="cursor">_</span>
+            </h2>
+            
+            <p class="descripcion-hero">
+                Documentación técnica oficial. Registro de ensamblaje, pruebas de software y control del sistema robótico.
+            </p>
+
+            <a href="#pasos" class="btn-hero">
+                <span class="icono-btn">▼</span> INICIAR LECTURA DEL PROYECTO
+            </a>
         </div>
+    </section>
 
+    <!-- ===== SECCIÓN PASOS ===== -->
+    <section id="pasos" class="seccion">
+        <h2 class="subtitulo">Pasos del Proyecto</h2>
+        <p style="text-align: center; color: #666; font-family: monospace;">
+            [ ESPACIO RESERVADO PARA LA DOCUMENTACIÓN DE PASOS ]
+        </p>
+    </section>
 
+    <!-- Script para el efecto interactivo de la portada -->
+    <script>
+        const texto = "Bienvenido al Proyecto";
+        const elemento = document.getElementById("typewriter");
+        let i = 0;
 
-
-
-
-
-
-
-    <script src="script.js"></script>
+        function escribir() {
+            if (i < texto.length) {
+                elemento.innerHTML += texto.charAt(i);
+                i++;
+                setTimeout(escribir, 80); // Velocidad de escritura (milisegundos)
+            }
+        }
+        // Iniciar animación al cargar
+        window.onload = escribir;
+    </script>
 </body>
 </html>

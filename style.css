@@ -245,3 +245,129 @@ img {
         padding: 15px;
     }
 }
+
+
+/* ===================================================== */
+/* ========== PORTADA INTERACTIVA INGENIERÍA =========== */
+/* ===================================================== */
+
+.hero-ingenieria {
+    position: relative;
+    width: 100%;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0a0a0a;
+    overflow: hidden;
+    margin-bottom: 60px;
+    border-bottom: 4px solid #f5c542; /* Línea de advertencia/detalle industrial */
+}
+
+/* Fondo de cuadrícula técnica */
+.fondo-cuadricula {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 30px 30px;
+    z-index: 1;
+}
+
+/* Círculo de luz de fondo */
+.hero-ingenieria::before {
+    content: '';
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(245, 197, 66, 0.15) 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.contenido-hero {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 40px 20px;
+    max-width: 800px;
+}
+
+/* Etiqueta superior tipo consola */
+.etiqueta-sistema {
+    font-family: 'Courier New', Courier, monospace;
+    color: #f5c542;
+    font-size: 0.9rem;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/* Título con efecto máquina de escribir */
+.titulo-hero {
+    font-size: clamp(2rem, 5vw, 4rem);
+    color: #fff;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    min-height: 1.2em; /* Evita saltos mientras escribe */
+}
+
+.cursor {
+    color: #f5c542;
+    animation: parpadeo 1s step-end infinite;
+}
+
+@keyframes parpadeo {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Texto descriptivo breve */
+.descripcion-hero {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: #bbb;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* Botón estilo ingeniería */
+.btn-hero {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: transparent;
+    color: #f5c542;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 15px 35px;
+    border: 2px solid #f5c542;
+    border-radius: 4px;
+    text-decoration: none;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(245, 197, 66, 0.1);
+}
+
+.icono-btn {
+    font-size: 0.8rem;
+    transition: transform 0.3s ease;
+}
+
+.btn-hero:hover {
+    background: #f5c542;
+    color: #000;
+    box-shadow: 0 0 25px rgba(245, 197, 66, 0.5);
+    transform: translateY(-2px);
+}
+
+.btn-hero:hover .icono-btn {
+    transform: translateY(4px); /* La flecha baja un poco */
+}
