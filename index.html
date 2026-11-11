@@ -13,126 +13,94 @@
             <h1 class="titulo-principal">Proyecto <strong>Brazo Robótico Red De Computadores</strong></h1>
         </header>
 
+        <!-- MENÚ DE NAVEGACIÓN -->
         <nav class="menu">
-            <a href="#inicio">Inicio</a>
-            <a href="#objetivos">Objetivos</a>
-            <a href="#documentacion">Documentación</a>
-            <a href="#evidencia">Evidencia 3D</a>
-            <a href="#equipo">Equipo</a>
+            <a href="#pasos">Pasos</a>
+            <a href="https://cristianice39-crypto.github.io/videos/">Videos</a>
+            <a href="https://cristianice39-crypto.github.io/galeria/">Galería</a>
+            <a href="https://cristianice39-crypto.github.io/materiales/">Materiales</a>
         </nav>
     </div>
 
-    <!-- ===== 1. PORTADA (HERO) ===== -->
-    <section id="inicio" class="hero-ingenieria">
+    <!-- ===== SECCIÓN DE INICIO / PORTADA DE INGENIERÍA ===== -->
+    <section class="hero-ingenieria">
+        
+        <!-- Cuadrícula de fondo estilo plano técnico -->
         <div class="fondo-cuadricula"></div>
+
         <div class="contenido-hero">
-            <p class="etiqueta-sistema">SYS.INIT // INGENIERÍA DE SISTEMAS</p>
+            <p class="etiqueta-sistema">SYS.INIT // INGENIERÍA MECATRÓNICA</p>
+            
+            <!-- Título con efecto de máquina de escribir -->
             <h2 class="titulo-hero">
                 <span id="typewriter"></span><span class="cursor">_</span>
             </h2>
+            
             <p class="descripcion-hero">
-                Repositorio técnico oficial. Documentación del diseño, ensamblaje, programación y pruebas del sistema robótico.
+                Documentación técnica oficial. Registro de ensamblaje, pruebas de software y control del sistema robótico.
             </p>
-            <a href="#objetivos" class="btn-hero">
-                <span class="icono-btn">▼</span> EXPLORAR PROYECTO
+
+            <a href="#pasos" class="btn-hero">
+                <span class="icono-btn">▼</span> INICIAR LECTURA DEL PROYECTO
             </a>
         </div>
     </section>
 
-    <!-- ===== 2. OBJETIVOS ===== -->
-    <section id="objetivos" class="seccion-contenedor">
+    <!-- ===== SECCIÓN PASOS ===== -->
+    <section id="pasos" class="seccion">
+        <h2 class="subtitulo">Pasos del Proyecto</h2>
+        <p style="text-align: center; color: #666; font-family: monospace;">
+            [ ESPACIO RESERVADO PARA LA DOCUMENTACIÓN DE PASOS ]
+        </p>
+    </section>
+
+
+
+
+    <!-- ===== SECCIÓN OBJETIVOS ===== -->
+    <section id="objetivos" class="seccion">
         <h2 class="subtitulo">Objetivos del Proyecto</h2>
-        
+
         <div class="grid-objetivos">
             <!-- Objetivo General -->
-            <div class="tarjeta-objetivo">
-                <div class="icono-objetivo">🎯</div>
-                <h3>Objetivo General</h3>
-                <p>
-                    Diseñar, construir y programar un brazo robótico funcional controlado por software, aplicando conceptos de mecatrónica, electrónica y lógica de programación para automatizar tareas básicas.
-                </p>
+            <div class="tarjeta-objetivo animar-entrada">
+                <div class="scan-line"></div>
+                <div class="tarjeta-header">
+                    <span class="codigo-nodo">SYS.OBJ.01</span>
+                    <span class="estado-nodo">● ACTIVO</span>
+                </div>
+                <div class="tarjeta-cuerpo">
+                    <div class="icono-objetivo">🎯</div>
+                    <h3>Objetivo General</h3>
+                    <p class="texto-escribir">
+                        Diseñar, construir y programar un brazo robótico funcional controlado por software, aplicando conceptos de mecatrónica, electrónica y lógica de programación para automatizar tareas básicas y demostrar su viabilidad en un entorno real.
+                    </p>
+                </div>
             </div>
 
             <!-- Objetivos Alcanzados -->
-            <div class="tarjeta-objetivo">
-                <div class="icono-objetivo">✅</div>
-                <h3>Objetivos Alcanzados</h3>
-                <ul>
-                    <li>Impresión y ensamblaje exitoso de las piezas mecánicas.</li>
-                    <li>Integración de servomotores con la placa controladora.</li>
-                    <li>Desarrollo de la interfaz de control (Software FabriCreator).</li>
-                    <li>Ejecución de pruebas de movimiento y calibración de precisión.</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== 3. DOCUMENTACIÓN (WORD) ===== -->
-    <section id="documentacion" class="seccion-contenedor fondo-oscuro">
-        <h2 class="subtitulo-blanco">Informe Técnico de Código</h2>
-        
-        <div class="contenedor-documento">
-            <div class="texto-doc">
-                <p>Accede al documento oficial que detalla la lógica de programación, algoritmos de control y estructura del código Python desarrollado para el brazo.</p>
-                <!-- ESPACIO PARA EL ARCHIVO WORD -->
-                <a href="TU_ARCHIVO_WORD.docx" download class="btn-doc">
-                    📄 Descargar Informe Word (.docx)
-                </a>
-            </div>
-            <div class="icono-doc">🐍</div>
-        </div>
-    </section>
-
-    <!-- ===== 4. EVIDENCIA IMPRESIÓN 3D (VIDEO Y FOTOS) ===== -->
-    <section id="evidencia" class="seccion-contenedor">
-        <h2 class="subtitulo">Evidencia de Fabricación</h2>
-        
-        <div class="bloque-evidencia">
-            <!-- VIDEO -->
-            <div class="video-muestra">
-                <h3>Proceso de Impresión 3D</h3>
-                <div class="marco-video">
-                    <!-- ESPACIO PARA TU VIDEO DE IMPRESIÓN -->
-                    <video controls poster="miniatura-impresion.jpg">
-                        <source src="video-impresion.mp4" type="video/mp4">
-                        Tu navegador no soporta videos HTML5.
-                    </video>
+            <div class="tarjeta-objetivo animar-entrada" style="transition-delay: 0.2s;">
+                <div class="scan-line"></div>
+                <div class="tarjeta-header">
+                    <span class="codigo-nodo">SYS.OBJ.02</span>
+                    <span class="estado-nodo" style="color: #00ffcc;">✓ COMPLETADO</span>
                 </div>
-            </div>
-
-            <!-- FOTOS -->
-            <div class="fotos-muestra">
-                <h3>Piezas y Ensamblaje</h3>
-                <div class="grid-fotos-evidencia">
-                    <!-- ESPACIO PARA TUS FOTOS -->
-                    <img src="foto-pieza1.jpg" alt="Pieza 3D 1">
-                    <img src="foto-pieza2.jpg" alt="Pieza 3D 2">
-                    <img src="foto-pieza3.jpg" alt="Pieza 3D 3">
-                    <img src="foto-pieza4.jpg" alt="Pieza 3D 4">
+                <div class="tarjeta-cuerpo">
+                    <div class="icono-objetivo">✅</div>
+                    <h3>Objetivos Alcanzados</h3>
+                    <ul class="lista-sistema">
+                        <li><span class="prompt">></span> Impresión y ensamblaje mecánico exitoso de las piezas 3D.</li>
+                        <li><span class="prompt">></span> Integración correcta de los servomotores con la placa controladora.</li>
+                        <li><span class="prompt">></span> Desarrollo de la interfaz de control mediante el software FabriCreator.</li>
+                        <li><span class="prompt">></span> Ejecución de pruebas de movimiento, calibración y precisión.</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ===== 5. EQUIPO (FOTO FINAL) ===== -->
-    <section id="equipo" class="seccion-contenedor">
-        <h2 class="subtitulo">El Equipo</h2>
-        <p class="texto-centrado">Estudiantes de Ingeniería de Sistemas - Red de Computadores</p>
-        
-        <!-- ESPACIO PARA LA FOTO DE TODOS USTEDES -->
-        <div class="contenedor-foto-equipo">
-            <img src="foto-equipo-con-brazo.jpg" alt="Equipo de trabajo con el brazo robótico">
-        </div>
-    </section>
-
-    <!-- ===== FOOTER ===== -->
-    <footer class="footer-ingenieria">
-        <p>SISTEMA COMPILADO EXITOSAMENTE // 2026</p>
-    </footer>
-
-    <!-- Scripts -->
+    <!-- Script para el efecto interactivo de la portada -->
     <script>
-        // Efecto Máquina de Escribir
         const texto = "Bienvenido al Proyecto";
         const elemento = document.getElementById("typewriter");
         let i = 0;
@@ -141,10 +109,45 @@
             if (i < texto.length) {
                 elemento.innerHTML += texto.charAt(i);
                 i++;
-                setTimeout(escribir, 80);
+                setTimeout(escribir, 80); // Velocidad de escritura (milisegundos)
             }
         }
+        // Iniciar animación al cargar
         window.onload = escribir;
     </script>
+
+    <script>
+// Efecto Máquina de Escribir (Título principal)
+const texto = "Bienvenido al Proyecto";
+const elemento = document.getElementById("typewriter");
+let i = 0;
+
+function escribir() {
+    if (elemento && i < texto.length) {
+        elemento.innerHTML += texto.charAt(i);
+        i++;
+        setTimeout(escribir, 80);
+    }
+}
+window.onload = escribir;
+
+// Animación de entrada para las tarjetas al hacer scroll
+document.addEventListener("DOMContentLoaded", () => {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+            }
+        });
+    }, {
+        threshold: 0.2 // Se activa cuando el 20% de la tarjeta es visible
+    });
+
+    const tarjetas = document.querySelectorAll('.animar-entrada');
+    tarjetas.forEach(tarjeta => observer.observe(tarjeta));
+});
+
+
+        </script>
 </body>
 </html>
