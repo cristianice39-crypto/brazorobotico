@@ -99,53 +99,36 @@
         </div>
     </section>
 
-    <!-- Script para el efecto interactivo de la portada -->
-    <script>
-        const texto = "Bienvenido al Proyecto";
-        const elemento = document.getElementById("typewriter");
-        let i = 0;
+      <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // 1. Efecto Máquina de Escribir (Título principal)
+            const texto = "Bienvenido al Proyecto";
+            const elemento = document.getElementById("typewriter");
+            let i = 0;
 
-        function escribir() {
-            if (i < texto.length) {
-                elemento.innerHTML += texto.charAt(i);
-                i++;
-                setTimeout(escribir, 80); // Velocidad de escritura (milisegundos)
+            function escribir() {
+                if (elemento && i < texto.length) {
+                    elemento.innerHTML += texto.charAt(i);
+                    i++;
+                    setTimeout(escribir, 80);
+                }
             }
-        }
-        // Iniciar animación al cargar
-        window.onload = escribir;
-    
-// Efecto Máquina de Escribir (Título principal)
-const texto = "Bienvenido al Proyecto";
-const elemento = document.getElementById("typewriter");
-let i = 0;
+            escribir();
 
-function escribir() {
-    if (elemento && i < texto.length) {
-        elemento.innerHTML += texto.charAt(i);
-        i++;
-        setTimeout(escribir, 80);
-    }
-}
-window.onload = escribir;
+            // 2. Animación de entrada para las tarjetas al hacer scroll
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                    }
+                });
+            }, {
+                threshold: 0.1 // Se activa apenas asoma un poquito la tarjeta
+            });
 
-// Animación de entrada para las tarjetas al hacer scroll
-document.addEventListener("DOMContentLoaded", () => {
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("visible");
-            }
+            const tarjetas = document.querySelectorAll('.animar-entrada');
+            tarjetas.forEach(tarjeta => observer.observe(tarjeta));
         });
-    }, {
-        threshold: 0.2 // Se activa cuando el 20% de la tarjeta es visible
-    });
-
-    const tarjetas = document.querySelectorAll('.animar-entrada');
-    tarjetas.forEach(tarjeta => observer.observe(tarjeta));
-});
-
-
-        </script>
+    </script>
 </body>
 </html>
