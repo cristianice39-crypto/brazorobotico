@@ -551,16 +551,21 @@ header {
     .menu a { font-size: 0.85rem; }
     .seccion { width: 100%; padding: 10px; }
 }
+
 /* =========================================================
-   RED NEURONAL DE FONDO + INFORMES  (versión 2, tema claro)
-   BORRA el bloque anterior de estilo-informes y pega este al final de tu style.css.
-   Todas las clases empiezan con "rn-" para no chocar con las tuyas.
+   RED NEURONAL DE FONDO + INFORMES (Tema claro)
    ========================================================= */
 
 /* ---------- Red de fondo (el script crea el canvas) ---------- */
-.rn-fondo{
-  position:fixed;top:0;left:0;width:100%;height:100%;
-  z-index:-1;pointer-events:none;display:block;
+.rn-fondo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+  display: block;
 }
 
 /* ---------- Sección de informes ---------- */
