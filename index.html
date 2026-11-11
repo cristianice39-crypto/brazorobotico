@@ -122,12 +122,10 @@
         </div>
 
         <div class="rn-red" id="rn-red">
-            <canvas class="rn-canvas" aria-hidden="true"></canvas>
-
             <div class="rn-contenido">
                 <div class="rn-cabecera">
-                    <span>RED.INFORMES // 4 NODOS</span>
-                    <span><i class="rn-led"></i>1 ACTIVO · 3 EN ESPERA</span>
+                    <span>Red de informes · 4 nodos</span>
+                    <span><i class="rn-led"></i>1 disponible · 3 en espera</span>
                 </div>
 
                 <!-- NODO 01: informe activo (el PDF debe estar en la misma carpeta que este index.html) -->
@@ -136,8 +134,8 @@
 
                     <div class="rn-col">
                         <div class="rn-nodo-top">
-                            <span class="rn-codigo">SYS.INF.01</span>
-                            <span class="rn-est">● DISPONIBLE</span>
+                            <span class="rn-codigo">Informe 01</span>
+                            <span class="rn-est">● Disponible</span>
                         </div>
                         <h3 class="rn-tit">Informe técnico de componentes del brazo robótico</h3>
                         <p class="rn-desc">Base de 5 patas, brazo de dos segmentos, muñeca inclinada y garra de dos dedos: 10 piezas impresas y unos 292 cm³ de plástico sólido en total. Incluye la ficha técnica de cada pieza, el orden de montaje y la estimación de material.</p>
@@ -148,9 +146,9 @@
                             <li>11 nov 2026</li>
                         </ul>
                         <a class="rn-btn" href="Informe_brazo_robotico.pdf" download="Informe_brazo_robotico.pdf" data-rn-descarga>
-                            <svg class="rn-ico rn-ico-dl" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/></svg>
-                            <svg class="rn-ico rn-ico-ok" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg>
-                            <span class="rn-txt" aria-live="polite">DESCARGAR INFORME</span>
+                            <svg class="rn-ico rn-ico-dl" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/></svg>
+                            <svg class="rn-ico rn-ico-ok" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg>
+                            <span class="rn-txt" aria-live="polite">Descargar informe</span>
                             <span class="rn-pct"></span>
                         </a>
                     </div>
@@ -178,7 +176,7 @@
                 <!--
                     NODOS 02, 03 y 04: espacios libres para los próximos informes.
                     Para activar uno: cambia el código, el título y la descripción, quita la clase "rn-nodo--libre"
-                    y a su punto de conexión (el span con clase "rn-pin") quítale también "rn-pin--off".
+                    y, en su punto de conexión (el span con clase "rn-pin"), quítale también "rn-pin--off".
                     Borra el bloque "rn-esq" y cambia el <button disabled> por un <a> como el del NODO 01:
                     <a class="rn-btn" href="NOMBRE.pdf" download="NOMBRE.pdf" data-rn-descarga> (con sus dos iconos y los spans rn-txt y rn-pct).
                 -->
@@ -186,37 +184,37 @@
                     <article class="rn-nodo rn-nodo--libre" style="--d: 0.15s;">
                         <span class="rn-pin rn-pin--off"></span>
                         <div class="rn-nodo-top">
-                            <span class="rn-codigo">SYS.INF.02</span>
-                            <span class="rn-est rn-est--off">○ EN ESPERA</span>
+                            <span class="rn-codigo">Informe 02</span>
+                            <span class="rn-est rn-est--off">○ En espera</span>
                         </div>
-                        <h3 class="rn-tit">Informe 02</h3>
+                        <h3 class="rn-tit">Próximo informe</h3>
                         <p class="rn-desc">Espacio reservado para el siguiente informe del proyecto.</p>
                         <div class="rn-esq" aria-hidden="true"><i></i><i></i><i></i></div>
-                        <button class="rn-btn rn-btn--off" type="button" disabled><span class="rn-txt">PRÓXIMAMENTE</span></button>
+                        <button class="rn-btn rn-btn--off" type="button" disabled><span class="rn-txt">Próximamente</span></button>
                     </article>
 
                     <article class="rn-nodo rn-nodo--libre" style="--d: 0.3s;">
                         <span class="rn-pin rn-pin--off"></span>
                         <div class="rn-nodo-top">
-                            <span class="rn-codigo">SYS.INF.03</span>
-                            <span class="rn-est rn-est--off">○ EN ESPERA</span>
+                            <span class="rn-codigo">Informe 03</span>
+                            <span class="rn-est rn-est--off">○ En espera</span>
                         </div>
-                        <h3 class="rn-tit">Informe 03</h3>
+                        <h3 class="rn-tit">Próximo informe</h3>
                         <p class="rn-desc">Espacio reservado para el siguiente informe del proyecto.</p>
                         <div class="rn-esq" aria-hidden="true"><i></i><i></i><i></i></div>
-                        <button class="rn-btn rn-btn--off" type="button" disabled><span class="rn-txt">PRÓXIMAMENTE</span></button>
+                        <button class="rn-btn rn-btn--off" type="button" disabled><span class="rn-txt">Próximamente</span></button>
                     </article>
 
                     <article class="rn-nodo rn-nodo--libre" style="--d: 0.45s;">
                         <span class="rn-pin rn-pin--off"></span>
                         <div class="rn-nodo-top">
-                            <span class="rn-codigo">SYS.INF.04</span>
-                            <span class="rn-est rn-est--off">○ EN ESPERA</span>
+                            <span class="rn-codigo">Informe 04</span>
+                            <span class="rn-est rn-est--off">○ En espera</span>
                         </div>
-                        <h3 class="rn-tit">Informe 04</h3>
+                        <h3 class="rn-tit">Próximo informe</h3>
                         <p class="rn-desc">Espacio reservado para el siguiente informe del proyecto.</p>
                         <div class="rn-esq" aria-hidden="true"><i></i><i></i><i></i></div>
-                        <button class="rn-btn rn-btn--off" type="button" disabled><span class="rn-txt">PRÓXIMAMENTE</span></button>
+                        <button class="rn-btn rn-btn--off" type="button" disabled><span class="rn-txt">Próximamente</span></button>
                     </article>
                 </div>
             </div>
