@@ -371,3 +371,270 @@ img {
 .btn-hero:hover .icono-btn {
     transform: translateY(4px); /* La flecha baja un poco */
 }
+
+/* ===================================================== */
+/* ========== ESTRUCTURA GENERAL Y PORTADA ============= */
+/* ===================================================== */
+
+/* (Aquí va tu CSS de la barra superior, títulos, etc. que ya tenías) */
+/* ... */
+
+/* ===== 1. HERO (PORTADA) ===== */
+.hero-ingenieria {
+    position: relative;
+    width: 100%;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0a0a0a;
+    overflow: hidden;
+    margin-bottom: 0;
+    border-bottom: 4px solid #f5c542;
+}
+
+.fondo-cuadricula {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 30px 30px;
+    z-index: 1;
+}
+
+.hero-ingenieria::before {
+    content: '';
+    position: absolute;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(245, 197, 66, 0.15) 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.contenido-hero {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 40px 20px;
+    max-width: 800px;
+}
+
+.etiqueta-sistema {
+    font-family: 'Courier New', monospace;
+    color: #f5c542;
+    font-size: 0.9rem;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.titulo-hero {
+    font-size: clamp(2rem, 5vw, 4rem);
+    color: #fff;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    min-height: 1.2em;
+}
+
+.cursor { color: #f5c542; animation: parpadeo 1s step-end infinite; }
+@keyframes parpadeo { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+
+.descripcion-hero {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: #bbb;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+.btn-hero {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: transparent;
+    color: #f5c542;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 15px 35px;
+    border: 2px solid #f5c542;
+    border-radius: 4px;
+    text-decoration: none;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.btn-hero:hover {
+    background: #f5c542;
+    color: #000;
+    box-shadow: 0 0 25px rgba(245, 197, 66, 0.5);
+    transform: translateY(-2px);
+}
+.icono-btn { transition: transform 0.3s ease; }
+.btn-hero:hover .icono-btn { transform: translateY(4px); }
+
+/* ===== ESTILOS DE SECCIONES ===== */
+.seccion-contenedor {
+    max-width: 1100px;
+    margin: 80px auto;
+    padding: 0 20px;
+}
+
+.fondo-oscuro {
+    background-color: #111;
+    max-width: 100%;
+    padding: 60px 20px;
+    margin: 0;
+}
+
+/* ===== 2. OBJETIVOS ===== */
+.grid-objetivos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.tarjeta-objetivo {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border-top: 4px solid #000;
+}
+
+.icono-objetivo { font-size: 2.5rem; margin-bottom: 15px; }
+.tarjeta-objetivo h3 { font-size: 1.4rem; margin-bottom: 15px; color: #000; }
+.tarjeta-objetivo p, .tarjeta-objetivo li { color: #444; line-height: 1.6; font-size: 1rem; }
+.tarjeta-objetivo ul { padding-left: 20px; margin-top: 10px; }
+.tarjeta-objetivo li { margin-bottom: 8px; }
+
+/* ===== 3. DOCUMENTACIÓN ===== */
+.subtitulo-blanco {
+    text-align: center;
+    color: #fff;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.contenedor-documento {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #1a1a1a;
+    padding: 40px;
+    border-radius: 10px;
+    border: 1px solid #333;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.texto-doc { max-width: 600px; }
+.texto-doc p { color: #aaa; font-size: 1.1rem; line-height: 1.6; margin-bottom: 25px; }
+
+.btn-doc {
+    display: inline-block;
+    background: #f5c542;
+    color: #000;
+    font-weight: bold;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+.btn-doc:hover { background: #e0b230; }
+
+.icono-doc { font-size: 5rem; opacity: 0.8; }
+
+/* ===== 4. EVIDENCIA ===== */
+.bloque-evidencia {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.marco-video {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #000;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.marco-video video {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+}
+
+.fotos-muestra h3, .video-muestra h3 {
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+    color: #000;
+}
+
+.grid-fotos-evidencia {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.grid-fotos-evidencia img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+.grid-fotos-evidencia img:hover { transform: scale(1.05); }
+
+/* ===== 5. EQUIPO ===== */
+.texto-centrado { text-align: center; color: #666; margin-bottom: 30px; font-size: 1.1rem; }
+
+.contenedor-foto-equipo {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.contenedor-foto-equipo img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ===== FOOTER ===== */
+.footer-ingenieria {
+    background: #000;
+    color: #555;
+    text-align: center;
+    padding: 20px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    margin-top: 60px;
+    border-top: 2px solid #f5c542;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .contenedor-documento { flex-direction: column; text-align: center; gap: 30px; }
+    .bloque-evidencia { grid-template-columns: 1fr; }
+    .grid-fotos-evidencia img { height: 200px; }
+    .subtitulo-blanco { font-size: 1.6rem; }
+}
