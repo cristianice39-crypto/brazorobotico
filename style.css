@@ -1,4 +1,6 @@
-/* ===== RESET ===== */
+/* ===================================================== */
+/* ==================== RESET Y BASE =================== */
+/* ===================================================== */
 * {
     margin: 0;
     padding: 0;
@@ -7,7 +9,7 @@
 }
 
 html {
-    font-size: 16px; /* base para unidades rem */
+    font-size: 16px;
     scroll-behavior: smooth;
 }
 
@@ -15,10 +17,13 @@ body {
     background: #f4f4f4;
     color: #222;
     min-height: 100vh;
-    overflow-x: hidden; /* evita scroll horizontal en móvil */
+    overflow-x: hidden;
+    display: block; /* 🔥 Asegura que todo fluya de arriba a abajo */
 }
 
-/* ===== BARRA SUPERIOR (TÍTULO + MENÚ) ===== */
+/* ===================================================== */
+/* ============= BARRA SUPERIOR Y MENÚ ================= */
+/* ===================================================== */
 .barra-superior {
     display: flex;
     align-items: stretch;
@@ -30,18 +35,17 @@ body {
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
 }
 
-/* ===== ENCABEZADO ===== */
 header {
     display: flex;
     align-items: center;
     padding: 0 40px;
     background: #000;
     flex: 1;
-    min-width: 0; /* permite que el texto se encoja */
+    min-width: 0;
 }
 
 .titulo-principal {
-    font-size: clamp(1.5rem, 5vw, 3.5rem); /* tamaño fluido */
+    font-size: clamp(1.5rem, 5vw, 3.5rem);
     font-weight: 900;
     color: #fff;
     letter-spacing: 2px;
@@ -57,7 +61,6 @@ header {
     font-weight: 900;
 }
 
-/* ===== MENÚ ===== */
 .menu {
     display: flex;
     align-items: center;
@@ -82,175 +85,20 @@ header {
     color: #bbb;
 }
 
-/* ===== BOTÓN DE TEMA ===== */
-.btn-tema {
-    position: fixed;
-    top: 25px;
-    right: 25px;
-    width: 55px;
-    height: 55px;
-    background: #000;
-    color: #f5c542;
-    border: none;
-    border-radius: 50%;
-    font-size: 1.4rem;
-    cursor: pointer;
-    z-index: 200;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background 0.3s, transform 0.3s;
-}
-
-.btn-tema:hover {
-    background: #333;
-    transform: scale(1.08);
-}
-
-/* ===== SECCIONES (para cuando agregues contenido) ===== */
+/* ===================================================== */
+/* ============ SECCIONES GENERALES ==================== */
+/* ===================================================== */
 .seccion {
     width: 90%;
     max-width: 1100px;
-    margin: 40px auto;
+    margin: 60px auto;
     padding: 20px;
+    display: block; /* Asegura que no se pongan lado a lado */
 }
-
-/* ===== IMÁGENES RESPONSIVE ===== */
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-
-/* ===== VIDEOS RESPONSIVE (16:9) ===== */
-.video {
-    position: relative;
-    width: 100%;
-    padding-bottom: 56.25%;
-    height: 0;
-    overflow: hidden;
-    border-radius: 8px;
-}
-
-.video iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
-}
-
-/* ===== GALERÍA RESPONSIVE ===== */
-.galeria {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
-}
-
-/* ===================================================== */
-/* ==================== RESPONSIVE ===================== */
-/* ===================================================== */
-
-/* 📺 TABLET (hasta 1024px) */
-@media (max-width: 1024px) {
-    header {
-        padding: 0 25px;
-    }
-
-    .menu {
-        gap: 30px;
-        padding: 0 30px;
-    }
-
-    .titulo-principal {
-        font-size: clamp(1.3rem, 4.5vw, 2.5rem);
-    }
-}
-
-/* 📱 TABLET PEQUEÑA / MÓVIL GRANDE (hasta 768px) */
-@media (max-width: 768px) {
-    .barra-superior {
-        flex-direction: column;
-        margin: 20px auto;
-        border-radius: 0;
-        width: 100%;
-    }
-
-    header {
-        justify-content: center;
-        padding: 25px 20px;
-        text-align: center;
-    }
-
-    .titulo-principal {
-        font-size: clamp(1.5rem, 7vw, 2.5rem);
-        letter-spacing: 1px;
-        text-align: center;
-    }
-
-    .menu {
-        justify-content: center;
-        gap: 20px;
-        padding: 15px 15px;
-        flex-wrap: wrap;
-        width: 100%;
-    }
-
-    .menu a {
-        font-size: 0.95rem;
-    }
-
-    .btn-tema {
-        top: 15px;
-        right: 15px;
-        width: 45px;
-        height: 45px;
-        font-size: 1.1rem;
-    }
-}
-
-/* 📱 MÓVIL PEQUEÑO (hasta 480px) */
-@media (max-width: 480px) {
-    header {
-        padding: 20px 15px;
-    }
-
-    .titulo-principal {
-        font-size: 1.5rem;
-        letter-spacing: 0.5px;
-    }
-
-    .menu {
-        gap: 12px;
-        padding: 12px 10px;
-    }
-
-    .menu a {
-        font-size: 0.85rem;
-        padding: 5px 8px;
-    }
-
-    .btn-tema {
-        top: 10px;
-        right: 10px;
-        width: 40px;
-        height: 40px;
-        font-size: 1rem;
-    }
-
-    .seccion {
-        width: 95%;
-        margin: 20px auto;
-        padding: 15px;
-    }
-}
-
 
 /* ===================================================== */
 /* ========== PORTADA INTERACTIVA INGENIERÍA =========== */
 /* ===================================================== */
-
 .hero-ingenieria {
     position: relative;
     width: 100%;
@@ -260,11 +108,10 @@ img {
     justify-content: center;
     background-color: #0a0a0a;
     overflow: hidden;
-    margin-bottom: 60px;
-    border-bottom: 4px solid #f5c542; /* Línea de advertencia/detalle industrial */
+    margin-bottom: 20px;
+    border-bottom: 4px solid #f5c542;
 }
 
-/* Fondo de cuadrícula técnica */
 .fondo-cuadricula {
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
@@ -275,7 +122,6 @@ img {
     z-index: 1;
 }
 
-/* Círculo de luz de fondo */
 .hero-ingenieria::before {
     content: '';
     position: absolute;
@@ -295,7 +141,6 @@ img {
     max-width: 800px;
 }
 
-/* Etiqueta superior tipo consola */
 .etiqueta-sistema {
     font-family: 'Courier New', Courier, monospace;
     color: #f5c542;
@@ -306,7 +151,6 @@ img {
     font-weight: bold;
 }
 
-/* Título con efecto máquina de escribir */
 .titulo-hero {
     font-size: clamp(2rem, 5vw, 4rem);
     color: #fff;
@@ -315,29 +159,26 @@ img {
     letter-spacing: 2px;
     margin-bottom: 25px;
     text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
-    min-height: 1.2em; /* Evita saltos mientras escribe */
+    min-height: 1.2em; 
 }
 
 .cursor {
     color: #f5c542;
-    animation: parpadeo 1s step-end infinite;
+    animation: parpadeo-cursor 1s step-end infinite;
 }
 
-@keyframes parpadeo {
+@keyframes parpadeo-cursor {
     0%, 100% { opacity: 1; }
     50% { opacity: 0; }
 }
 
-/* Texto descriptivo breve */
 .descripcion-hero {
     font-size: clamp(1rem, 2vw, 1.2rem);
     color: #bbb;
     line-height: 1.6;
     margin-bottom: 40px;
-    font-family: 'Segoe UI', Arial, sans-serif;
 }
 
-/* Botón estilo ingeniería */
 .btn-hero {
     display: inline-flex;
     align-items: center;
@@ -369,163 +210,12 @@ img {
 }
 
 .btn-hero:hover .icono-btn {
-    transform: translateY(4px); /* La flecha baja un poco */
-}
-
-/* ===================================================== */
-/* ========== OBJETIVOS ESTILO INFORMÁTICO ============= */
-/* ===================================================== */
-
-.grid-objetivos {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
-}
-
-/* Tarjeta base */
-.tarjeta-objetivo {
-    position: relative;
-    background: #0a0a0a;
-    border: 1px solid #333;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
-    text-align: left;
-}
-
-.tarjeta-objetivo:hover {
-    transform: translateY(-8px);
-    border-color: #f5c542;
-    box-shadow: 0 15px 40px rgba(245, 197, 66, 0.15);
-}
-
-/* Animación de línea de escaneo */
-.scan-line {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: #f5c542;
-    box-shadow: 0 0 10px #f5c542;
-    animation: escanear 3s linear infinite;
-    opacity: 0.5;
-}
-
-@keyframes escanear {
-    0% { top: 0; opacity: 0; }
-    10% { opacity: 1; }
-    90% { opacity: 1; }
-    100% { top: 100%; opacity: 0; }
-}
-
-/* Encabezado de la tarjeta (tipo ventana de terminal) */
-.tarjeta-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #151515;
-    padding: 10px 20px;
-    border-bottom: 1px solid #333;
-    font-family: 'Courier New', monospace;
-    font-size: 0.8rem;
-    letter-spacing: 1px;
-}
-
-.codigo-nodo {
-    color: #888;
-    font-weight: bold;
-}
-
-.estado-nodo {
-    color: #f5c542;
-    animation: parpadeo 2s infinite;
-}
-
-@keyframes parpadeo {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.5; }
-}
-
-/* Cuerpo de la tarjeta */
-.tarjeta-cuerpo {
-    padding: 30px;
-}
-
-.icono-objetivo {
-    font-size: 2.5rem;
-    margin-bottom: 15px;
-    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.2));
-}
-
-.tarjeta-cuerpo h3 {
-    font-size: 1.4rem;
-    margin-bottom: 15px;
-    color: #fff;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.tarjeta-cuerpo p {
-    color: #aaa;
-    line-height: 1.7;
-    font-size: 1rem;
-    font-family: 'Segoe UI', Arial, sans-serif;
-}
-
-/* Lista de objetivos alcanzados estilo código */
-.lista-sistema {
-    list-style: none;
-    padding-left: 0;
-    margin-top: 15px;
-}
-
-.lista-sistema li {
-    color: #ccc;
-    line-height: 1.6;
-    font-size: 0.95rem;
-    margin-bottom: 12px;
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-}
-
-.prompt {
-    color: #f5c542;
-    font-family: 'Courier New', monospace;
-    font-weight: bold;
-    font-size: 1.1rem;
-}
-
-/* ===== ANIMACIÓN DE ENTRADA AL HACER SCROLL ===== */
-.animar-entrada {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.animar-entrada.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* ===== RESPONSIVE ===== */
-@media (max-width: 768px) {
-    .grid-objetivos {
-        grid-template-columns: 1fr;
-    }
-    .tarjeta-cuerpo {
-        padding: 20px;
-    }
+    transform: translateY(4px);
 }
 
 /* ===================================================== */
 /* ========== CARRUSEL TECNOLÓGICO (PASOS) ============= */
 /* ===================================================== */
-
 .tech-carousel-container {
     position: relative;
     width: 100%;
@@ -538,7 +228,6 @@ img {
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(0,0,0,0.8);
 }
 
-/* Interfaz superior (REC y Tiempo) */
 .carousel-ui-top {
     display: flex;
     justify-content: space-between;
@@ -574,11 +263,10 @@ img {
 .ui-text { color: #888; }
 .time-code { color: #f5c542; }
 
-/* Pista del carrusel */
 .carousel-track {
     display: flex;
     transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
-    height: 450px; /* Ajusta la altura según necesites */
+    height: 450px; 
     background: #000;
 }
 
@@ -595,10 +283,9 @@ img {
 .carousel-slide video {
     width: 100%;
     height: 100%;
-    object-fit: contain; /* Mantiene la proporción sin recortar */
+    object-fit: contain; 
 }
 
-/* Etiqueta sobre la imagen (SYS.IMG.01) */
 .slide-overlay {
     position: absolute;
     bottom: 15px;
@@ -613,7 +300,6 @@ img {
     backdrop-filter: blur(4px);
 }
 
-/* Botones de control */
 .carousel-btn {
     position: absolute;
     top: 50%;
@@ -642,7 +328,6 @@ img {
 .carousel-btn.prev { left: 15px; border-radius: 4px; }
 .carousel-btn.next { right: 15px; border-radius: 4px; }
 
-/* Indicadores (puntitos) */
 .carousel-indicators {
     position: absolute;
     bottom: 15px;
@@ -670,25 +355,212 @@ img {
     transform: scale(1.2);
 }
 
-/* Esquinas de la interfaz HUD (Detalle tecnológico) */
-.hud-corner {
+/* ===================================================== */
+/* ========== OBJETIVOS ESTILO INFORMÁTICO ============= */
+/* ===================================================== */
+.subtitulo {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-weight: 900;
+    color: #fff;
+    letter-spacing: 2px;
+    text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 4px 6px 12px rgba(0, 0, 0, 0.9);
+    background: #000;
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 4px;
+    margin-bottom: 30px;
+}
+
+.grid-objetivos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.tarjeta-objetivo {
+    position: relative;
+    background: #0a0a0a;
+    border: 1px solid #333;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+    text-align: left;
+}
+
+.tarjeta-objetivo:hover {
+    transform: translateY(-8px);
+    border-color: #f5c542;
+    box-shadow: 0 15px 40px rgba(245, 197, 66, 0.15);
+}
+
+.scan-line {
     position: absolute;
-    width: 20px;
-    height: 20px;
-    border: 2px solid #f5c542;
-    pointer-events: none;
-    z-index: 5;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #f5c542;
+    box-shadow: 0 0 10px #f5c542;
+    animation: escanear 3s linear infinite;
     opacity: 0.5;
 }
-.hud-corner.top-left { top: 55px; left: 10px; border-right: none; border-bottom: none; }
-.hud-corner.top-right { top: 55px; right: 10px; border-left: none; border-bottom: none; }
-.hud-corner.bottom-left { bottom: 10px; left: 10px; border-right: none; border-top: none; }
-.hud-corner.bottom-right { bottom: 10px; right: 10px; border-left: none; border-top: none; }
 
-/* Responsive para móviles */
+@keyframes escanear {
+    0% { top: 0; opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { top: 100%; opacity: 0; }
+}
+
+.tarjeta-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #151515;
+    padding: 10px 20px;
+    border-bottom: 1px solid #333;
+    font-family: 'Courier New', monospace;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+.codigo-nodo {
+    color: #888;
+    font-weight: bold;
+}
+
+.estado-nodo {
+    color: #f5c542;
+    animation: parpadeo-nodo 2s infinite;
+}
+
+@keyframes parpadeo-nodo {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.tarjeta-cuerpo {
+    padding: 30px;
+}
+
+.icono-objetivo {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.2));
+}
+
+.tarjeta-cuerpo h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    color: #fff;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.tarjeta-cuerpo p {
+    color: #aaa;
+    line-height: 1.7;
+    font-size: 1rem;
+}
+
+.lista-sistema {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 15px;
+}
+
+.lista-sistema li {
+    color: #ccc;
+    line-height: 1.6;
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.prompt {
+    color: #f5c542;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* Animación de entrada */
+.animar-entrada {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.animar-entrada.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ===================================================== */
+/* ==================== RESPONSIVE ===================== */
+/* ===================================================== */
+@media (max-width: 1024px) {
+    header { padding: 0 25px; }
+    .menu { gap: 30px; padding: 0 30px; }
+    .titulo-principal { font-size: clamp(1.3rem, 4.5vw, 2.5rem); }
+}
+
 @media (max-width: 768px) {
+    .barra-superior {
+        flex-direction: column;
+        margin: 20px auto;
+        border-radius: 0;
+        width: 100%;
+    }
+
+    header {
+        justify-content: center;
+        padding: 25px 20px;
+        text-align: center;
+    }
+
+    .titulo-principal {
+        font-size: clamp(1.5rem, 7vw, 2.5rem);
+        letter-spacing: 1px;
+        text-align: center;
+    }
+
+    .menu {
+        justify-content: center;
+        gap: 20px;
+        padding: 15px 15px;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    .menu a { font-size: 0.95rem; }
+
+    .seccion {
+        width: 95%;
+        margin: 30px auto;
+        padding: 10px;
+    }
+
     .carousel-track { height: 300px; }
     .carousel-btn { width: 35px; height: 35px; font-size: 1rem; }
     .carousel-btn.prev { left: 5px; }
     .carousel-btn.next { right: 5px; }
+
+    .grid-objetivos {
+        grid-template-columns: 1fr;
+    }
+    .tarjeta-cuerpo { padding: 20px; }
+}
+
+@media (max-width: 480px) {
+    header { padding: 20px 15px; }
+    .titulo-principal { font-size: 1.5rem; }
+    .menu { gap: 12px; padding: 12px 10px; }
+    .menu a { font-size: 0.85rem; }
+    .seccion { width: 100%; padding: 10px; }
 }
