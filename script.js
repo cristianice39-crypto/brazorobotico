@@ -93,10 +93,10 @@ document.addEventListener("DOMContentLoaded", () => {
   var cv = document.createElement('canvas');
   cv.className = 'rn-fondo';
   cv.setAttribute('aria-hidden', 'true');
+  // Lo insertamos al principio del body
   document.body.insertBefore(cv, document.body.firstChild);
   var ctx = cv.getContext('2d');
 
-  /* La red empieza donde termina la portada (si no existe, en "Pasos") */
   var hero = document.querySelector('.hero-ingenieria');
   var pasos = document.getElementById('pasos');
   
@@ -202,14 +202,13 @@ document.addEventListener("DOMContentLoaded", () => {
     var i, j, a, b, dx, dy, d;
     for (i = 0; i < nodos.length; i++) {
       a = nodos[i];
-      // Nodos más oscuros para que contrasten con el fondo gris
+      // Nodos gris oscuro para contrastar con el fondo
       ctx.fillStyle = 'rgba(80,80,80,.7)';
       ctx.beginPath(); ctx.arc(a.x, a.y, a.r, 0, 6.2832); ctx.fill();
 
       for (j = i + 1; j < nodos.length; j++) {
         b = nodos[j]; dx = a.x - b.x; dy = a.y - b.y; d = Math.sqrt(dx * dx + dy * dy);
         if (d < 140) {
-          // Líneas grises visibles
           ctx.strokeStyle = 'rgba(80,80,80,' + (0.3 * (1 - d / 140)).toFixed(3) + ')';
           ctx.lineWidth = 1;
           ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
@@ -217,7 +216,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       dx = a.x - mx; dy = a.y - my; d = Math.sqrt(dx * dx + dy * dy);
       if (d < 160) {
-        // Línea del mouse en amarillo
         ctx.strokeStyle = 'rgba(214,150,0,' + (0.8 * (1 - d / 160)).toFixed(3) + ')';
         ctx.lineWidth = 1.2;
         ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(mx, my); ctx.stroke();

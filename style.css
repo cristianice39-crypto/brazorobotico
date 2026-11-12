@@ -11,10 +11,11 @@
 html {
     font-size: 16px;
     scroll-behavior: smooth;
+    background-color: #f4f4f4; /* Movemos el fondo gris aquí */
 }
 
 body {
-    background: #f4f4f4;
+    background-color: transparent; /* Hacemos el body transparente para que se vea la red */
     color: #222;
     min-height: 100vh;
     overflow-x: hidden;
@@ -33,7 +34,6 @@ body {
     border-radius: 4px;
     overflow: hidden;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
-    /* Elevar por encima de la red neuronal */
     position: relative;
     z-index: 1;
 }
@@ -94,7 +94,6 @@ header {
     margin: 60px auto;
     padding: 20px;
     display: block;
-    /* Elevar por encima de la red neuronal */
     position: relative;
     z-index: 1; 
 }
@@ -104,7 +103,7 @@ header {
 /* ===================================================== */
 .hero-ingenieria {
     position: relative;
-    z-index: 1; /* Elevar por encima de la red neuronal */
+    z-index: 1;
     width: 100%;
     min-height: 60vh;
     display: flex;
@@ -570,7 +569,7 @@ header {
     left: 0;
     width: 100vw;
     height: 100vh;
-    z-index: 0; /* Se coloca por encima del fondo de la página pero debajo de las tarjetas */
+    z-index: -1; /* Lo enviamos al fondo para que no tape nada */
     pointer-events: none;
     display: block;
 }
