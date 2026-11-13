@@ -6,79 +6,21 @@
     <title>Proyecto Brazo Robótico - Red de Computadores</title>
     <link rel="stylesheet" href="style.css">
     <style>
-    /* =========================================================
-       PIE DE PÁGINA: PLANO TÉCNICO PARA LA FOTO DEL GRUPO
-       (estos estilos viajan dentro del index.html)
-       ========================================================= */
-    .pie-plano{position:relative;z-index:1;margin-top:60px;padding:46px 16px 40px;background:#0b2a52;border-top:4px solid #f5c542;overflow:hidden;color:#cfe8ff;text-align:center}
-    .pie-plano,.pie-plano *{font-family:'Courier New',Courier,monospace;box-sizing:border-box}
-    .pie-plano::before{content:'';position:absolute;inset:0;pointer-events:none;
-        background-image:linear-gradient(rgba(159,211,255,.12) 1px,transparent 1px),linear-gradient(90deg,rgba(159,211,255,.12) 1px,transparent 1px),linear-gradient(rgba(159,211,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(159,211,255,.05) 1px,transparent 1px);
-        background-size:100px 100px,100px 100px,20px 20px,20px 20px;animation:plano-grid 40s linear infinite}
-    @keyframes plano-grid{to{background-position:100px 100px,100px 100px,20px 20px,20px 20px}}
-    .pie-plano>*{position:relative}
-    .plano-etiqueta{color:#f5c542;font-size:.9rem;letter-spacing:3px;font-weight:bold;margin-bottom:6px}
-    .plano-titulo{color:#fff;font-size:clamp(1.5rem,4vw,2.1rem);font-weight:900;letter-spacing:3px;text-transform:uppercase;margin-bottom:28px}
-
-    /* Hoja del plano */
-    .plano-hoja{position:relative;width:min(100%,780px);margin:0 auto;padding:30px;border:2px solid #cfe8ff;outline:1px solid rgba(207,232,255,.45);outline-offset:5px;background:rgba(8,32,66,.78);animation:plano-entra .9s ease both}
-    @keyframes plano-entra{from{opacity:0;transform:translateY(24px)}}
-    .zona{position:absolute;display:flex;justify-content:space-around;font-size:.68rem;color:#9fd3ff;letter-spacing:1px;pointer-events:none}
-    .zona--h{left:30px;right:30px;height:30px;align-items:center}
-    .zona--t{top:0}.zona--b{bottom:0}
-    .zona--v{top:30px;bottom:30px;width:30px;flex-direction:column;align-items:center}
-    .zona--l{left:0}.zona--r{right:0}
-    .plano-area{border:1px solid rgba(207,232,255,.7);padding:18px}
-
-    /* Vista con cotas */
-    .plano-vista{display:grid;grid-template-columns:30px minmax(0,1fr);grid-template-rows:auto 30px;gap:8px;max-width:670px;margin:0 auto}
-    .plano-foto{grid-column:2;grid-row:1;position:relative;aspect-ratio:3/2;background:#061a36;border:2px solid #fff;overflow:hidden;display:flex;align-items:center;justify-content:center}
-    .plano-foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;z-index:1}
-    .plano-vacio{position:relative;z-index:0;color:#9fd3ff;font-size:.85rem;letter-spacing:2px;line-height:1.9;padding:0 12px}
-    .plano-vacio b{display:block;color:#f5c542}
-    .plano-cruz{position:absolute;left:50%;top:50%;width:26px;height:26px;margin:-13px 0 0 -13px;z-index:2;pointer-events:none;opacity:.75;
-        background:linear-gradient(#f5c542,#f5c542) 50% 0/1px 100% no-repeat,linear-gradient(#f5c542,#f5c542) 0 50%/100% 1px no-repeat;animation:plano-mira 3s ease-in-out infinite}
-    @keyframes plano-mira{0%,100%{opacity:.8;transform:scale(1)}50%{opacity:.3;transform:scale(.8)}}
-    .ang{position:absolute;width:18px;height:18px;border:0 solid #fff;z-index:2;pointer-events:none}
-    .ang.a1{top:8px;left:8px;border-top-width:2px;border-left-width:2px}
-    .ang.a2{top:8px;right:8px;border-top-width:2px;border-right-width:2px}
-    .ang.a3{bottom:8px;left:8px;border-bottom-width:2px;border-left-width:2px}
-    .ang.a4{bottom:8px;right:8px;border-bottom-width:2px;border-right-width:2px}
-    .plano-barrido{position:absolute;top:0;bottom:0;left:0;width:1px;background:#f5c542;box-shadow:0 0 8px #f5c542;opacity:.85;z-index:3;pointer-events:none;animation:plano-barre 8s ease-in-out infinite alternate}
-    @keyframes plano-barre{to{left:100%}}
-
-    .dim{display:flex;align-items:center;color:#f5c542;font-size:.72rem;letter-spacing:1px}
-    .dim b{flex:1;background:currentColor}
-    .dim i{width:10px;height:10px;background:currentColor;flex:none}
-    .dim span{white-space:nowrap;animation:plano-cota 3s ease-in-out infinite}
-    @keyframes plano-cota{0%,100%{opacity:1}50%{opacity:.45}}
-    .dim-h{grid-column:2;grid-row:2;border-left:1px solid rgba(245,197,66,.7);border-right:1px solid rgba(245,197,66,.7)}
-    .dim-h b{height:1px}.dim-h span{padding:0 10px}
-    .dim-h .fl{clip-path:polygon(100% 0,0 50%,100% 100%)}.dim-h .fr{clip-path:polygon(0 0,100% 50%,0 100%)}
-    .dim-v{grid-column:1;grid-row:1;flex-direction:column;border-top:1px solid rgba(245,197,66,.7);border-bottom:1px solid rgba(245,197,66,.7)}
-    .dim-v b{width:1px}.dim-v span{writing-mode:vertical-rl;transform:rotate(180deg);padding:10px 0}
-    .dim-v .fl{clip-path:polygon(0 100%,50% 0,100% 100%)}.dim-v .fr{clip-path:polygon(0 0,50% 100%,100% 0)}
-
-    /* Cajetín (cuadro de rotulación) */
-    .plano-cajetin{margin-top:18px;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:1px;background:rgba(207,232,255,.6);border:1px solid #cfe8ff;text-align:left}
-    .celda{background:#0b2a52;padding:7px 10px;min-width:0}
-    .celda small{display:block;font-size:.6rem;color:#9fd3ff;letter-spacing:1.5px;text-transform:uppercase}
-    .celda strong{display:block;font-size:.8rem;color:#fff;font-weight:700;letter-spacing:.4px;line-height:1.45}
-    .c1{grid-column:span 1}.c2{grid-column:span 2}.c3{grid-column:span 3}
-    .led{display:inline-block;width:8px;height:8px;margin-right:6px;border-radius:50%;background:#f5c542;box-shadow:0 0 8px #f5c542;animation:plano-led 1.6s steps(2,end) infinite}
-    @keyframes plano-led{50%{opacity:.2}}
-    .pie-plano .pie-legal{margin-top:26px;font-size:.78rem;color:#7fa6cf;letter-spacing:1px}
-
-    @media (max-width:620px){
-        .plano-hoja{padding:14px}
-        .zona{display:none}
-        .plano-area{padding:10px}
-        .plano-vista{grid-template-columns:24px minmax(0,1fr);gap:6px}
-        .plano-vacio{font-size:.7rem;letter-spacing:1px}
-        .plano-cajetin{grid-template-columns:repeat(2,minmax(0,1fr))}
-        .c1,.c2,.c3{grid-column:span 2}
-    }
-    @media (prefers-reduced-motion:reduce){.pie-plano::before,.plano-hoja,.plano-cruz,.plano-barrido,.dim span,.led{animation:none!important}}
+    /* Pie de página: foto del grupo (estilos incluidos aquí para que no dependan de style.css) */
+    .pie-equipo{width:100%;margin-top:60px;padding:30px 16px 28px;background:transparent;text-align:center;position:relative;z-index:1}
+    .pie-equipo,.pie-equipo *{box-sizing:border-box;font-family:'Segoe UI',Arial,sans-serif}
+            .pe-figura{width:min(100%,620px);margin:0 auto;padding:10px;background:#111;border:1px solid #333;border-radius:4px;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+    .pe-barra{display:flex;justify-content:space-between;padding:0 2px 8px;font-family:'Courier New',Courier,monospace;font-size:.72rem;letter-spacing:1px;color:#777}
+    .pe-foto{position:relative;aspect-ratio:3/2;background:#000;border:1px solid #444;overflow:hidden;display:flex;align-items:center;justify-content:center}
+    .pe-foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+    .pe-vacio{color:#666;font-family:'Courier New',Courier,monospace;font-size:.8rem;letter-spacing:1px;padding:0 12px}
+    .pe-foto::before,.pe-foto::after{content:'';position:absolute;width:16px;height:16px;border:0 solid rgba(245,197,66,.8);z-index:2;pointer-events:none}
+    .pe-foto::before{top:6px;left:6px;border-top-width:1px;border-left-width:1px}
+    .pe-foto::after{bottom:6px;right:6px;border-bottom-width:1px;border-right-width:1px}
+    .pe-figura figcaption{padding:12px 4px 4px;font-size:.95rem;color:#ddd;line-height:1.6}
+    .pe-figura figcaption small{display:block;margin-top:2px;font-size:.78rem;color:#888}
+    .pie-equipo .pe-legal{margin-top:26px;font-size:.8rem;color:#555}
+    @media (max-width:480px){.pie-equipo{padding:40px 12px 24px}.pe-figura figcaption{font-size:.85rem}}
     </style>
 </head>
 <body>
@@ -320,49 +262,24 @@
         </div>
     </section>
 
-    <!-- ===== PIE DE PÁGINA: PLANO TÉCNICO CON LA FOTO DEL GRUPO ===== -->
-    <footer class="pie-plano" id="equipo">
-        <p class="plano-etiqueta">SYS.TEAM // PLANO DE EQUIPO</p>
-        <h2 class="plano-titulo">Nuestro Equipo</h2>
+    <!-- ===== PIE DE PÁGINA: FOTO DEL GRUPO ===== -->
+    <footer class="pie-equipo" id="equipo">
+        <h2 class="subtitulo">Nuestro Equipo</h2>
 
-        <div class="plano-hoja">
-            <div class="zona zona--h zona--t"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span></div>
-            <div class="zona zona--h zona--b"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span></div>
-            <div class="zona zona--v zona--l"><span>A</span><span>B</span><span>C</span><span>D</span></div>
-            <div class="zona zona--v zona--r"><span>A</span><span>B</span><span>C</span><span>D</span></div>
-
-            <div class="plano-area">
-                <div class="plano-vista">
-                    <div class="dim dim-v"><i class="fl"></i><b></b><span>400 px</span><b></b><i class="fr"></i></div>
-                    <div class="plano-foto">
-                        <!-- Pon la foto del grupo en esta carpeta con el nombre foto_grupo.jpeg -->
-                        <div class="plano-vacio"><b>[ VISTA PRINCIPAL ]</b>foto_grupo.jpeg · 600 × 400</div>
-                        <img src="foto_grupo.jpeg" alt="Foto del grupo con el brazo robótico armado" onerror="this.style.display='none'">
-                        <span class="ang a1"></span><span class="ang a2"></span><span class="ang a3"></span><span class="ang a4"></span>
-                        <span class="plano-cruz"></span>
-                        <span class="plano-barrido"></span>
-                    </div>
-                    <div class="dim dim-h"><i class="fl"></i><b></b><span>600 px</span><b></b><i class="fr"></i></div>
-                </div>
-
-                <div class="plano-cajetin">
-                    <div class="celda c3"><small>Proyecto</small><strong>Brazo robótico de 6 ejes</strong></div>
-                    <div class="celda c1 m"><small>Plano N.º</small><strong>BR-06-FG</strong></div>
-                    <div class="celda c1 m"><small>Escala</small><strong>1 : 1</strong></div>
-                    <div class="celda c1 m"><small>Hoja</small><strong>1 / 1</strong></div>
-
-                    <div class="celda c3"><small>Dibujó / Equipo</small><strong>Santiago Perdomo · Santiago Corrales · Cristian Pinillo · Juan Diego Mondragón</strong></div>
-                    <div class="celda c2"><small>Asignatura</small><strong>Arquitectura de Computadores</strong></div>
-                    <div class="celda c1 m"><small>Fecha</small><strong>NOV-2026</strong></div>
-
-                    <div class="celda c3"><small>Institución</small><strong>Universidad Libre Seccional Cali · Facultad de Ingeniería</strong></div>
-                    <div class="celda c2"><small>Docente</small><strong>Fernando Vélez Varela</strong></div>
-                    <div class="celda c1 m"><small>Estado</small><strong><i class="led"></i>REV. A</strong></div>
-                </div>
+        <figure class="pe-figura">
+            <div class="pe-barra"><span>FIG. 01</span><span>ESCALA 1:1</span></div>
+            <div class="pe-foto">
+                <!-- Pon la foto del grupo en esta carpeta con el nombre foto_grupo.jpeg -->
+                <span class="pe-vacio">foto_grupo.jpeg</span>
+                <img src="foto_grupo.jpeg" alt="Foto del grupo con el brazo robótico armado" onerror="this.style.display='none'">
             </div>
-        </div>
+            <figcaption>
+                Santiago Perdomo · Santiago Corrales · Cristian Pinillo · Juan Diego Mondragón
+                <small>Universidad Libre Seccional Cali · Facultad de Ingeniería · Arquitectura de Computadores</small>
+            </figcaption>
+        </figure>
 
-        <p class="pie-legal">Documentación técnica · Proyecto Brazo Robótico · Cali, Colombia</p>
+        <p class="pe-legal">Proyecto Brazo Robótico · Cali, Colombia · 2026</p>
     </footer>
 
     <script src="script.js"></script>
