@@ -125,7 +125,7 @@
             <div class="rn-contenido">
                 <div class="rn-cabecera">
                     <span>Red de informes · 4 nodos</span>
-                    <span><i class="rn-led"></i>1 disponible · 3 en espera</span>
+                    <span><i class="rn-led"></i>4 disponibles</span>
                 </div>
 
                 <!-- NODO 01: informe activo (el PDF debe estar en la misma carpeta que este index.html) -->
@@ -173,53 +173,111 @@
                     </div>
                 </article>
 
-                <!--
-                    NODOS 02, 03 y 04: espacios libres para los próximos informes.
-                    Para activar uno: cambia el código, el título y la descripción, quita la clase "rn-nodo--libre"
-                    y, en su punto de conexión (el span con clase "rn-pin"), quítale también "rn-pin--off".
-                    Borra el bloque "rn-esq" y cambia el <button disabled> por un <a> como el del NODO 01:
-                    <a class="rn-btn" href="NOMBRE.pdf" download="NOMBRE.pdf" data-rn-descarga> (con sus dos iconos y los spans rn-txt y rn-pct).
-                -->
+                <!-- NODOS 02, 03 y 04: los PDF deben estar en la misma carpeta que este index.html -->
                 <div class="rn-slots">
-                    <article class="rn-nodo rn-nodo--libre" style="--d: 0.15s;">
-                        <span class="rn-pin rn-pin--off"></span>
+                    <article class="rn-nodo" style="--d: 0.15s;">
+                        <span class="rn-pin"></span>
                         <div class="rn-nodo-top">
                             <span class="rn-codigo">Informe 02</span>
-                            <span class="rn-est rn-est--off">○ En espera</span>
+                            <span class="rn-est">● Disponible</span>
                         </div>
-                        <h3 class="rn-tit">Próximo informe</h3>
-                        <p class="rn-desc">Espacio reservado para el siguiente informe del proyecto.</p>
-                        <div class="rn-esq" aria-hidden="true"><i></i><i></i><i></i></div>
-                        <button class="rn-btn rn-btn--off" type="button" disabled><span class="rn-txt">Próximamente</span></button>
+                        <h3 class="rn-tit">Control de brazo robótico de 6 ejes con Arduino Uno y PCA9685</h3>
+                        <p class="rn-desc">Explicación del firmware: conversión de ángulos a pulsos PWM de 12 bits, modos manual y automático, control de velocidad y protocolo de comandos seriales.</p>
+                        <ul class="rn-meta">
+                            <li>PDF</li>
+                            <li>10 págs.</li>
+                            <li>0,3 MB</li>
+                            <li>nov 2026</li>
+                        </ul>
+                        <a class="rn-btn" href="Informe_control_firmware.pdf" download="Informe_control_firmware.pdf" data-rn-descarga>
+                            <svg class="rn-ico rn-ico-dl" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/></svg>
+                            <svg class="rn-ico rn-ico-ok" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg>
+                            <span class="rn-txt" aria-live="polite">Descargar informe</span>
+                            <span class="rn-pct"></span>
+                        </a>
                     </article>
 
-                    <article class="rn-nodo rn-nodo--libre" style="--d: 0.3s;">
-                        <span class="rn-pin rn-pin--off"></span>
+                    <article class="rn-nodo" style="--d: 0.3s;">
+                        <span class="rn-pin"></span>
                         <div class="rn-nodo-top">
                             <span class="rn-codigo">Informe 03</span>
-                            <span class="rn-est rn-est--off">○ En espera</span>
+                            <span class="rn-est">● Disponible</span>
                         </div>
-                        <h3 class="rn-tit">Próximo informe</h3>
-                        <p class="rn-desc">Espacio reservado para el siguiente informe del proyecto.</p>
-                        <div class="rn-esq" aria-hidden="true"><i></i><i></i><i></i></div>
-                        <button class="rn-btn rn-btn--off" type="button" disabled><span class="rn-txt">Próximamente</span></button>
+                        <h3 class="rn-tit">Materiales, costos y planos de componentes</h3>
+                        <p class="rn-desc">Listado de materiales del kit, comparación de precios, costo total de $786.954 COP, planos de conexión y simulación numérica.</p>
+                        <ul class="rn-meta">
+                            <li>PDF</li>
+                            <li>14 págs.</li>
+                            <li>0,6 MB</li>
+                            <li>nov 2026</li>
+                        </ul>
+                        <a class="rn-btn" href="Informe_materiales_costos.pdf" download="Informe_materiales_costos.pdf" data-rn-descarga>
+                            <svg class="rn-ico rn-ico-dl" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/></svg>
+                            <svg class="rn-ico rn-ico-ok" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg>
+                            <span class="rn-txt" aria-live="polite">Descargar informe</span>
+                            <span class="rn-pct"></span>
+                        </a>
                     </article>
 
-                    <article class="rn-nodo rn-nodo--libre" style="--d: 0.45s;">
-                        <span class="rn-pin rn-pin--off"></span>
+                    <article class="rn-nodo" style="--d: 0.45s;">
+                        <span class="rn-pin"></span>
                         <div class="rn-nodo-top">
                             <span class="rn-codigo">Informe 04</span>
-                            <span class="rn-est rn-est--off">○ En espera</span>
+                            <span class="rn-est">● Disponible</span>
                         </div>
-                        <h3 class="rn-tit">Próximo informe</h3>
-                        <p class="rn-desc">Espacio reservado para el siguiente informe del proyecto.</p>
-                        <div class="rn-esq" aria-hidden="true"><i></i><i></i><i></i></div>
-                        <button class="rn-btn rn-btn--off" type="button" disabled><span class="rn-txt">Próximamente</span></button>
+                        <h3 class="rn-tit">Informe técnico final</h3>
+                        <p class="rn-desc">Síntesis de los tres informes, integración de resultados, limitaciones y conclusiones generales del proyecto.</p>
+                        <ul class="rn-meta">
+                            <li>PDF</li>
+                            <li>9 págs.</li>
+                            <li>0,2 MB</li>
+                            <li>nov 2026</li>
+                        </ul>
+                        <a class="rn-btn" href="Informe_final_brazo_robotico.pdf" download="Informe_final_brazo_robotico.pdf" data-rn-descarga>
+                            <svg class="rn-ico rn-ico-dl" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/></svg>
+                            <svg class="rn-ico rn-ico-ok" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg>
+                            <span class="rn-txt" aria-live="polite">Descargar informe</span>
+                            <span class="rn-pct"></span>
+                        </a>
                     </article>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- ===== PIE DE PÁGINA: FOTO DEL GRUPO ===== -->
+    <footer class="pie-equipo" id="equipo">
+        <p class="etiqueta-sistema">SYS.TEAM // EQUIPO DE TRABAJO</p>
+        <h2 class="subtitulo">Nuestro Equipo</h2>
+
+        <figure class="marco-figura animar-entrada">
+            <div class="marco-tech">
+            <div class="marco-borde"></div>
+            <div class="marco-interior">
+                <div class="marco-barra">
+                    <span class="ui-status"><span class="rec-dot"></span><span class="ui-text">CAM.01 // GRUPO COMPLETO</span></span>
+                    <span class="ui-text marco-hora" id="marco-time">00:00:00</span>
+                </div>
+                <div class="marco-foto">
+                    <!-- Pon la foto del grupo en esta carpeta con el nombre foto_grupo.jpeg -->
+                    <img src="foto_grupo.jpeg" alt="Foto del grupo con el brazo robótico armado" onerror="this.style.display='none'">
+                    <span class="marco-vacio">FOTO DEL GRUPO · foto_grupo.jpeg</span>
+                    <div class="marco-reticula"></div>
+                    <div class="marco-scan"></div>
+                </div>
+                <div class="marco-barra marco-barra--inf">
+                    <span class="ui-text">STATUS: PROYECTO COMPLETADO</span>
+                    <span class="ui-text marco-id">ID.4/4</span>
+                </div>
+            </div>
+            <span class="esq esq-tl"></span><span class="esq esq-tr"></span>
+            <span class="esq esq-bl"></span><span class="esq esq-br"></span>
+            </div>
+            <figcaption>Santiago Perdomo · Santiago Corrales · Cristian Pinillo · Juan Diego Mondragón</figcaption>
+        </figure>
+
+        <p class="pie-legal">Universidad Libre Seccional Cali · Facultad de Ingeniería · Arquitectura de Computadores · 2026</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>

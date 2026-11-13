@@ -71,14 +71,16 @@ document.addEventListener("DOMContentLoaded", () => {
         nextBtn.addEventListener('click', () => goToSlide(currentIndex + 1));
         prevBtn.addEventListener('click', () => goToSlide(currentIndex - 1));
 
-        setInterval(() => {
-            const timeEl = document.getElementById('carousel-time');
-            if(timeEl) {
-                const now = new Date();
-                timeEl.textContent = now.toLocaleTimeString('en-US', { hour12: false });
-            }
-        }, 1000);
     }
+
+    // Relojes de los marcos (carrusel y foto del grupo)
+    setInterval(() => {
+        const ahora = new Date().toLocaleTimeString('en-US', { hour12: false });
+        ['carousel-time', 'marco-time'].forEach(id => {
+            const el = document.getElementById(id);
+            if (el) el.textContent = ahora;
+        });
+    }, 1000);
 });
 
 /* =========================================================
